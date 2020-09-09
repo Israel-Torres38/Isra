@@ -46,9 +46,8 @@
 
   // called when a message arrives
   function onMessageArrived(message) {
-    mensaje=message.payloadString.split("= ");
-    document.getElementById("sensor").innerHTML=mensaje[1];
-    console.log("MensajeRecibido:"+message.payloadString);
+    mensaje=message.payloadString;
+	console.log(Mensaje);
 	 S1=document.getElementById("Sensor")
 	 S2=document.getElementById("Sensor1")
 	 S3=document.getElementById("Sensor2")
