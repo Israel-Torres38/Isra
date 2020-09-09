@@ -25,7 +25,7 @@
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conexion Establecida");
 	
-    client.subscribe("iatorres@hotmail.es/test");
+    client.subscribe("iatorres@hotmail.es/test1");
     sendMessage("Servidor NTP");
 	message.destinationName=("iatorres@hotmail.es/test");
 	client.send(message);
