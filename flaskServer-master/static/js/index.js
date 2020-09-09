@@ -23,7 +23,7 @@
   // called when the client connects
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
-    console.log("Conexion Establecida");
+    console.log("Conectado.....");
 	
     client.subscribe("iatorres@hotmail.es/test");
 	message=new Paho.MQTT.Message("Servidor NTP");
