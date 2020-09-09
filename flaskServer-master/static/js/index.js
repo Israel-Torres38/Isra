@@ -54,4 +54,5 @@
      S2.innerHTML="Minutos:"+Mensaje.split(".")[1];
 	 S3.innerHTML="Segundos:"+Mensaje.split(".")[2];
   }
+  }
 
