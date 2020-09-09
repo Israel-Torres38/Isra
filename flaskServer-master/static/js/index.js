@@ -26,7 +26,7 @@
     console.log("Conexion Establecida");
 	
     client.subscribe("iatorres@hotmail.es/test1");
-    sendMessage("Servidor NTP");
+	message=new Paho.MQTT.Message("Servidor NTP");
 	message.destinationName=("iatorres@hotmail.es/test");
 	client.send(message);
 	
@@ -49,11 +49,11 @@
     mensaje=message.payloadString.split("= ");
     document.getElementById("sensor").innerHTML=mensaje[1];
     console.log("MensajeRecibido:"+message.payloadString);
-	S1=document.getElementById("Sensor")
-	S2=document.getElementById("Sensor1")
-	S3=document.getElementById("Sensor2")
-	S1.innerHTML="Hora:"+Mensaje.split(".")[0];
-    S2.innerHTML="Minutos:"+Mensaje.split(".")[1];
-	S3.innerHTML="Segundos:"+Mensaje.split(".")[2];
+	 S1=document.getElementById("Sensor")
+	 S2=document.getElementById("Sensor1")
+	 S3=document.getElementById("Sensor2")
+	 S1.innerHTML="Hora:"+Mensaje.split(".")[0];
+     S2.innerHTML="Minutos:"+Mensaje.split(".")[1];
+	 S3.innerHTML="Segundos:"+Mensaje.split(".")[2];
   }
 
