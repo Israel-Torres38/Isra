@@ -25,9 +25,9 @@
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conexion Establecida");
 	
-    client.subscribe("iatorres@hotmail.es/test1");
+    client.subscribe("iatorres@hotmail.es/test");
 	message=new Paho.MQTT.Message("Servidor NTP");
-	message.destinationName=("iatorres@hotmail.es/test");
+	message.destinationName=("iatorres@hotmail.es/test1");
 	client.send(message);
 	
   }
