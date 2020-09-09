@@ -1,26 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
-	
-	console.log("led on");
-        message = new Paho.MQTT.Message("LED1_ON");
-        message.destinationName = "ruberchiles@hotmail.es/test1";
-        client.send(message);
-        
-  
-}
-function LED1_Off(){	
-	
-	console.log("led off");
-        message = new Paho.MQTT.Message("LED1_OFF")
-        message.destinationName = "ruberchiles@hotmail.es/test1";
-        client.send(message);
-}
-
-
-
-
-
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -32,8 +11,8 @@ function LED1_Off(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "ruberchiles@hotmail.es",
-    password: "Campeones1",
+    userName: "iatorres@hotmail.es",
+    password: "israel123torres",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -44,12 +23,12 @@ function LED1_Off(){
   // called when the client connects
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
-    console.log("Conectado...");
+    console.log("Conexion Establecida");
 	
-    client.subscribe("ruberchiles@hotmail.es/test");
-    message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "ruberchiles@hotmail.es/test1";
-    client.send(message);
+    client.subscribe("iatorres@hotmail.es/test");
+    sendMessage("Servidor NTP");
+	message.destinationName=("iatorres@hotmail.es/test");
+	client.send(message);
 	
   }
 
@@ -67,7 +46,14 @@ function LED1_Off(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("Nuevo mensaje:"+message.payloadString);
-    document.getElementById("sensor").innerHTML=message.payloadString.split("=")[1];
+    mensaje=message.payloadString.split("= ");
+    document.getElementById("sensor").innerHTML=mensaje[1];
+    console.log("MensajeRecibido:"+message.payloadString);
+	S1=document.getElementById("Sensor")
+	S2=document.getElementById("Sensor1")
+	S3=document.getElementById("Sensor2")
+	S1.innerHTML="Hora:"+Mensaje.split(".")[0];
+    S2.innerHTML="Minutos:"+Mensaje.split(".")[1];
+	S3.innerHTML="Segundos:"+Mensaje.split(".")[2];
   }
-  
+
