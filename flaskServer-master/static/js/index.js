@@ -24,7 +24,6 @@
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado.....");
-	
     client.subscribe("iatorres@hotmail.es/test");
 	message=new Paho.MQTT.Message("Servidor NTP");
 	message.destinationName=("iatorres@hotmail.es/test1");
@@ -46,7 +45,7 @@
 
   // called when a message arrives
   function onMessageArrived(message) {
-    mensaje=message.payloadString;
+    Mensaje=message.payloadString;
 	console.log(Mensaje);
 	 S1=document.getElementById("Sensor")
 	 S2=document.getElementById("Sensor1")
