@@ -55,7 +55,7 @@
 
   function ObtenerDatos(){
 	
-    var hora1=document.getElementById('Horas').value;
+    var hora1=document.getElementById('HoraS').value;
     
 	texHora=hora1;
 	if(texHora==""){
