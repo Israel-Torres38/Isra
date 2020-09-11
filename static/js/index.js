@@ -25,7 +25,7 @@
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("iatorres@hotmail/test");
+    client.subscribe("iatorres@hotmail.es/test");
 
 	
   }
@@ -74,7 +74,7 @@ function Activar(){
 		texto.innerText=" Apagar ";
         animacion.src="/static/images/reg1.gif";
         message = new Paho.MQTT.Message("1,"+texHora);
-        message.destinationName = "iatorres@hotmail/test1";
+        message.destinationName = "iatorres@hotmail.es/test1";
         client.send(message);
     }
     else
@@ -82,13 +82,13 @@ function Activar(){
 		texto.innerText='Encender';
         animacion.src="/static/images/reg.png"
         message = new Paho.MQTT.Message("0,"+texHora);
-        message.destinationName = "iatorres@hotmail/test1";
+        message.destinationName = "iatorres@hotmail.es/test1";
         client.send(message);
 	}
 }
 function enviarH(){
     message = new Paho.MQTT.Message("0,"+texHora);
-	message.destinationName = "iatorres@hotmail/test1";
+	message.destinationName = "iatorres@hotmail.es/test1";
 	client.send(message);
 }
 
