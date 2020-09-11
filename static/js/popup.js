@@ -1,9 +1,9 @@
-var overlay = document.getElementById('overlay'),
-	popup = document.getElementById('popup'),
-	animacion1=document.getElementById('ani'),
-	texDia=document.getElementById('fecha'),
+var overlay = document.getElementById('overlay'),//variables, capa del menu
+	popup = document.getElementById('popup'),//clase
+	animacion1=document.getElementById('ani'),//anamicaciones imagenes
+	texDia=document.getElementById('fecha'),//hora
 	animacion=document.getElementById('ani1'),
-	texto=document.getElementById('encender');
+	texto=document.getElementById('encender');//boton 
 	
 
 
@@ -11,19 +11,19 @@ var texHora,hoy,hora,boot,Min,Hor;
 texHora=null;
 
 function Mostrar(){
-	
+	//relaciono a boton confihuracion, abre menu poput para q se enucnrte visibel
 	overlay.classList.add("active")
 	popup.classList.add("active")
 	
 }
 
-function Cerrar(){
+function Cerrar(){//retira esa clse
 	overlay.classList.remove('active');
 	popup.classList.remove('active');
 	enviarH();
 }
 
-function Tiempo(){
+function Tiempo(){//funcion para calcular la hora y actualizar
 	
 	hoy=new Date();
 	if(hoy.getHours()<10){
@@ -51,7 +51,7 @@ function Tiempo(){
 
 window.onload = function() {
 	
-	setInterval(Tiempo, 1000);
+	setInterval(Tiempo, 1000);//ms
 
   }
 

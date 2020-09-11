@@ -47,8 +47,8 @@
     val=document.getElementById('meter5');
     console.log(message.payloadString);
     info=message.payloadString.split(",");
-    activar=parseInt(info[0]);
-    valor=parseInt(info[1]);
+    activar=parseInt(info[0]);//valor de activacin
+    valor=parseInt(info[1]);//valor de hora
     val.value=valor;
     Activar();
   }
@@ -81,13 +81,13 @@ function Activar(){
 	{
 		texto.innerText='Encender';
         animacion.src="/static/images/reg.png"
-        message = new Paho.MQTT.Message("0,"+texHora);
+        message = new Paho.MQTT.Message("0,"+texHora);//cambia el nombre a apagar
         message.destinationName = "iatorres@hotmail.es/test1";
         client.send(message);
 	}
 }
 function enviarH(){
-    message = new Paho.MQTT.Message("0,"+texHora);
+    message = new Paho.MQTT.Message("0,"+texHora);//q este descativado y hora
 	message.destinationName = "iatorres@hotmail.es/test1";
 	client.send(message);
 }
