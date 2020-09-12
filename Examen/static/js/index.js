@@ -49,7 +49,7 @@
     S1=document.getElementById("sensor")
     S2=document.getElementById("sensor1")
     S3=document.getElementById("sensor2")
-    S1.innerHTML="Hora: "+Mensaje.split(":")[0];
-    S2.innerHTML="Minutos: "+Mensaje.split(":")[1];
-    S3.innerHTML="Segundos: "+Mensaje.split(":")[2];
+    S1.innerHTML=" "+Mensaje.split(":")[0];
+    S2.innerHTML=" "+Mensaje.split(":")[1];
+    S3.innerHTML=" "+Mensaje.split(":")[2];
   }
